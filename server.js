@@ -93,7 +93,9 @@ app.get('/pagecount', function (req, res) {
 });
 
 var mytest = require('./mytestmodule');
-app.get('/testing', mytest.testing(req, res));
+app.get('/testing', function (req, res) {
+  mytest.testing(req, res)
+});
 
 // error handling
 app.use(function(err, req, res, next){
